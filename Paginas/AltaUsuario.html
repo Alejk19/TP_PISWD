@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ALTA DE USUARIO</title>
   <link rel="stylesheet" href="../Estilos/altaUsuario.css" /> <!-- Llama al css que se encuentra dentro de la carpeta Estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
   <!-- La imagen del colegio -->
@@ -14,51 +16,57 @@
 
   <h1>ALTA DE USUARIO</h1>
 
-	<div class="container">
+	<div class="contenedor">
 	<div>Datos del usuario</div> <br>
 
 	<!-- El formulario -->
 	<form id="altaUsuarioForm">
-		<label for="tipoDocumento"> Tipo de documento </label>
-		<select id="tipoDocumento" name="tipoDocumento">
+
+    <div class="input-group input-group-sm mb-3" >  <!-- Clase de boostrap que permite cambiar el estilo, se aplica en la etiqueta <label> y <select> -->
+		<label for="tipoDocumento" class="input-group-text"> Tipo de documento </label>
+		<select id="tipoDocumento" name="tipoDocumento" class="form-select">
 		<option value="DNI">DNI</option>
 		<option value="LC">LC</option>
 		<option value="LE">LE</option>
 		</select> 
 		<br>
-		<br>
+    </div>
 
-		<label for="numeroDocumento"> Número de documento </label>
-		<input type="text" id="numeroDocumento" name="numeroDocumento" maxlength="10"> 
+    <div class="input-group input-group-sm mb-3"> <!-- Clase de boostrap que permite cambiar el estilo, se aplica en la etiqueta <label> e <input> -->
+		<label for="numeroDocumento" class="input-group-text"> Número de documento </label>
+		<input type="text" id="numeroDocumento" name="numeroDocumento" maxlength="10" class="form-control" placeholder="Numero de documento"> 
 		<br>
-		<br>
+    </div>
 
-		<label for="nombre"> Nombre </label>
-		<input type="text" id="nombre" name="nombre">
+    <div class="input-group input-group-sm mb-3">  <!-- Clase de boostrap que permite cambiar el estilo, se aplica en la etiqueta <label> e <input> -->
+		<label for="nombre" class="input-group-text"> Nombre </label>
+		<input type="text" id="nombre" name="nombre" class="form-control" aria-label="Sizing example input" placeholder="Nombre" aria-describedby="inputGroup-sizing-sm">
 		<br>
-		<br>
+    </div>
 
-		<label for="apellido"> Apellido </label>
-		<input type="text" id="apellido" name="apellido">
+    <div class="input-group input-group-sm mb-3">  <!-- Clase de boostrap que permite cambiar el estilo, se aplica en la etiqueta <label> e <input> -->
+		<label for="apellido" class="input-group-text"> Apellido </label>
+		<input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido">
 		<br>
-		<br>
+    </div>
 
-		<label for="anioDivision"> Año - División </label>
-		<input type="text" id="anioDivision" name="anioDivision">
+    <div class="input-group input-group-sm mb-3">  <!-- Clase de boostrap que permite cambiar el estilo, se aplica en la etiqueta <label> e <input> -->
+		<label for="anioDivision" class="input-group-text"> Año - División </label> 
+		<input type="text" id="anioDivision" name="anioDivision" class="form-control" placeholder="Año - División"> 
 		<br>
-		<br>
+    </div>
 
-		<button type="submit" id="btnAltaUsuario">Dar de Alta</button> <!-- El boton para ejecutar la accion de dar de alta-->
-		<button type="reset">Borrar datos</button> <!-- El boton para resetear los valores del formulario sin enviar -->
+	<button type="submit" id="btnAltaUsuario" class="btn btn-success">Dar de Alta</button> <!-- El boton para ejecutar la accion de dar de alta. Ademas tiene clase de boostrap para el color y forma del boton-->
+	<button type="reset" class="btn btn-danger">Borrar datos</button> <!-- El boton para resetear los valores del formulario sin enviar. Ademas tiene clase de boostrap para el color y forma del boton -->
 	</form>
 	</div>
 
   <!-- El pie de la pagina -->
-  <footer> 
-    <p class="pie">E.E.S.T N°6 CHACABUCO – MORÓN (7o 4o año 2024)</p>
-    <p class="pie">Proyecto de implementación de sitios web dinámicos</p>
-    <p class="pie">Autores: Alejo Alarcon, Jonathan Lezcano, Lautaro Cuba, Cristian Baez </p>
-  </footer> 
+	<footer> 
+		<p class="pie">E.E.S.T N°6 CHACABUCO – MORÓN (7o 4o año 2024) <br>
+		Proyecto de implementación de sitios web dinámicos <br>
+		Autores: Alejo Alarcon, Jonathan Lezcano, Lautaro Cuba, Cristian Baez </p>
+	</footer> 
 
   <!-- Script que contiene el codigo -->
   <script>
@@ -93,7 +101,7 @@
         alert("Formulario enviado"); //Da aviso al usuario de que el formulario se envio correctamente
 
         document.getElementById("altaUsuarioForm").reset(); //Una vez enviado el formulario, este borra los datos ingresados y restablece el formulario a su estado inicial.
-      }
+      	}
 
     altaUsuarioForm.addEventListener("submit", Validar); //le agrega a la variable altaUsuarioForm un evento que hace que al hacer submit se ejecute la funcion validar
   </script>

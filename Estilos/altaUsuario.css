@@ -7,11 +7,6 @@
 html {
     font-family: Verdana, Arial, sans-serif;
 }
-
-.container{
-    margin-left: 10px;
-}
-
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
@@ -25,6 +20,10 @@ p, label, input, select {
     height: 30vh;
 }
 
+.contenedor{
+    margin-left: 20px;
+}
+
 img{
     max-height: 100%;
     width: 100%;
@@ -36,6 +35,10 @@ footer {
     position:fixed;
     bottom:0;
     width:100%;
+}
+
+form{
+    max-width: 350px;
 }
 
 .pie{
