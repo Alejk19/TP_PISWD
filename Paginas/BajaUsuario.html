@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAJA DE USUARIO</title>
+  <link rel="stylesheet" href="../Estilos/bajaUsuario.css" /> <!-- Llama al css que se encuentra dentro de la carpeta Estilos -->
+</head>
+<body>
+  <!-- La imagen del colegio -->
+  <div class="imagen">
+    <img src="../Imagenes/imagen-colegio.jpg" />
+  </div>
+
+  <h1>BAJA DE USUARIO</h1>
+
+    <div class="container">
+    <div>Datos del usuario</div> <br>
+
+    <!-- El formulario -->
+    <form id="bajaUsuarioForm">
+        <label for="tipoDocumento"> Tipo de documento </label>
+        <select id="tipoDocumento" name="tipoDocumento">
+        <option value="DNI">DNI</option>
+        <option value="LC">LC</option>
+        <option value="LE">LE</option>
+        </select> 
+        <br>
+        <br>
+
+        <label for="numeroDocumento"> Número de documento </label>
+        <input type="text" id="numeroDocumento" name="numeroDocumento" maxlength="10"> 
+        <br>
+        <br>
+
+        <label for="nombre"> Nombre </label>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <br>
+
+        <label for="apellido"> Apellido </label>
+        <input type="text" id="apellido" name="apellido">
+        <br>
+        <br>
+
+        <label for="anioDivision"> Año - División </label>
+        <input type="text" id="anioDivision" name="anioDivision">
+        <br>
+        <br>
+
+        <button type="submit" id="btnBajaUsuario">Dar de baja</button> <!-- El boton para ejecutar la accion de dar de baja-->
+        <button type="reset">Borrar datos</button> <!-- El boton para resetear los valores del formulario sin enviar -->
+    </form>
+    </div>
+
+  <!-- El pie de la pagina -->
+  <footer> 
+    <p class="pie">E.E.S.T N°6 CHACABUCO – MORÓN (7o 4o año 2024)</p>
+    <p class="pie">Proyecto de implementación de sitios web dinámicos</p>
+    <p class="pie">Autores: Alejo Alarcon, Jonathan Lezcano, Lautaro Cuba, Cristian Baez </p>
+  </footer> 
+</body>
+</html>

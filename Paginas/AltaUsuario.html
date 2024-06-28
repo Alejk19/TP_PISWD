@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALTA DE USUARIO</title>
+  <link rel="stylesheet" href="../Estilos/altaUsuario.css" /> <!-- Llama al css que se encuentra dentro de la carpeta Estilos -->
+</head>
+<body>
+  <!-- La imagen del colegio -->
+  <div class="imagen">
+    <img src="../Imagenes/imagen-colegio.jpg" />
+  </div>
+
+  <h1>ALTA DE USUARIO</h1>
+
+	<div class="container">
+	<div>Datos del usuario</div> <br>
+
+	<!-- El formulario -->
+	<form id="altaUsuarioForm">
+		<label for="tipoDocumento"> Tipo de documento </label>
+		<select id="tipoDocumento" name="tipoDocumento">
+		<option value="DNI">DNI</option>
+		<option value="LC">LC</option>
+		<option value="LE">LE</option>
+		</select> 
+		<br>
+		<br>
+
+		<label for="numeroDocumento"> Número de documento </label>
+		<input type="text" id="numeroDocumento" name="numeroDocumento" maxlength="10"> 
+		<br>
+		<br>
+
+		<label for="nombre"> Nombre </label>
+		<input type="text" id="nombre" name="nombre">
+		<br>
+		<br>
+
+		<label for="apellido"> Apellido </label>
+		<input type="text" id="apellido" name="apellido">
+		<br>
+		<br>
+
+		<label for="anioDivision"> Año - División </label>
+		<input type="text" id="anioDivision" name="anioDivision">
+		<br>
+		<br>
+
+		<button type="submit" id="btnAltaUsuario">Dar de Alta</button> <!-- El boton para ejecutar la accion de dar de alta-->
+		<button type="reset">Borrar datos</button> <!-- El boton para resetear los valores del formulario sin enviar -->
+	</form>
+	</div>
+
+  <!-- El pie de la pagina -->
+  <footer> 
+    <p class="pie">E.E.S.T N°6 CHACABUCO – MORÓN (7o 4o año 2024)</p>
+    <p class="pie">Proyecto de implementación de sitios web dinámicos</p>
+    <p class="pie">Autores: Alejo Alarcon, Jonathan Lezcano, Lautaro Cuba, Cristian Baez </p>
+  </footer> 
+
+  <!-- Script que contiene el codigo -->
+  <script>
+    var altaUsuarioForm = document.getElementById("altaUsuarioForm"); //Obtiene el elemento form y lo guarda en una variable
+
+      function Validar() { //Crea la funcion que va a validar los campos
+        // Obteniene los valores ingresados en los campos del formulario
+        var tipoDocumento = document.getElementById("tipoDocumento").value;
+        var numeroDocumento = document.getElementById("numeroDocumento").value;
+        var nombre = document.getElementById("nombre").value;
+        var apellido = document.getElementById("apellido").value;
+        var anioDivision = document.getElementById("anioDivision").value;
+
+        // Valida que el número de documento sea numérico
+        if (isNaN(numeroDocumento)) {
+          alert("El número de documento debe ser numérico."); // Da un aviso al usuario si el número de documento no es numérico
+          return; //Evita que el formulario se envíe si el campo numeroDocumento no tiene un valor numérico
+        }
+
+        //Valida que los campos no se encuentren vacios
+        if (
+          tipoDocumento === "" ||
+          numeroDocumento === "" ||
+          nombre === "" ||
+          apellido === "" ||
+          anioDivision === ""
+        ) {
+          alert("Por favor, complete todos los campos."); // Da un aviso al usuario si hay algun campo vacio
+          return; //Evita que el formulario se envíe si hay campos vacios
+        }
+
+        alert("Formulario enviado"); //Da aviso al usuario de que el formulario se envio correctamente
+
+        document.getElementById("altaUsuarioForm").reset(); //Una vez enviado el formulario, este borra los datos ingresados y restablece el formulario a su estado inicial.
+      }
+
+    altaUsuarioForm.addEventListener("submit", Validar); //le agrega a la variable altaUsuarioForm un evento que hace que al hacer submit se ejecute la funcion validar
+  </script>
+</body>
+</html>
