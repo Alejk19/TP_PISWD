@@ -18,11 +18,11 @@
   <h1>ALTA DE USUARIO</h1>
 
 	<div class="contenedor">
-	<div>Datos del usuario</div> <br>
+
 
 	<!-- El formulario -->
 	<form id="altaUsuarioForm">
-
+    <div>Datos del usuario</div> <br>
     <div class="input-group input-group-sm mb-3" >  <!-- Clase de boostrap que permite cambiar el estilo, se aplica en la etiqueta <label> y <select> -->
 		<label for="tipoDocumento" class="input-group-text"> Tipo de documento </label>
 		<select id="tipoDocumento" name="tipoDocumento" class="form-select">
@@ -70,41 +70,6 @@
 	</footer> 
 
   <!-- Script que contiene el codigo -->
-  <script>
-    var altaUsuarioForm = document.getElementById("altaUsuarioForm"); //Obtiene el elemento form y lo guarda en una variable
-
-      function Validar() { //Crea la funcion que va a validar los campos
-        // Obteniene los valores ingresados en los campos del formulario
-        var tipoDocumento = document.getElementById("tipoDocumento").value;
-        var numeroDocumento = document.getElementById("numeroDocumento").value;
-        var nombre = document.getElementById("nombre").value;
-        var apellido = document.getElementById("apellido").value;
-        var anioDivision = document.getElementById("anioDivision").value;
-
-        // Valida que el número de documento sea numérico
-        if (isNaN(numeroDocumento)) {
-          alert("El número de documento debe ser numérico."); // Da un aviso al usuario si el número de documento no es numérico
-          return; //Evita que el formulario se envíe si el campo numeroDocumento no tiene un valor numérico
-        }
-
-        //Valida que los campos no se encuentren vacios
-        if (
-          tipoDocumento === "" ||
-          numeroDocumento === "" ||
-          nombre === "" ||
-          apellido === "" ||
-          anioDivision === ""
-        ) {
-          alert("Por favor, complete todos los campos."); // Da un aviso al usuario si hay algun campo vacio
-          return; //Evita que el formulario se envíe si hay campos vacios
-        }
-
-        alert("Formulario enviado"); //Da aviso al usuario de que el formulario se envio correctamente
-
-        document.getElementById("altaUsuarioForm").reset(); //Una vez enviado el formulario, este borra los datos ingresados y restablece el formulario a su estado inicial.
-      	}
-
-    altaUsuarioForm.addEventListener("submit", Validar); //le agrega a la variable altaUsuarioForm un evento que hace que al hacer submit se ejecute la funcion validar
-  </script>
+  <script src="../Scripts/AltaUsuario.js"></script>
 </body>
 </html>
